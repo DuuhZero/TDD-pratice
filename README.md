@@ -169,21 +169,18 @@ Regras de classificação:
 
 ## Exercício 2 — Person / Email / PersonDAO
 
-> Implementar `isValidToInclude(Person): string[]`. O método retorna uma lista de
-> erros com base no objeto `Person` recebido.
 
 ### Modelo
 
 - `Person(id: number, name: string, age: number, emails: Email[])`
 - `Email(id: number, name: string)`
-- `PersonDAO` — `save(p: Person): void` e `isValidToInclude(p: Person): string[]`
-- Relacionamento **Person 1 — 1,N Email**
+- `PersonDAO(save(p: Person): void ,isValidToInclude(p: Person): string[])`
 
 ### Regras de validação
 
-1. O nome deve ter ao menos **2 partes** e ser composto **apenas por letras**.
-2. A idade deve estar no intervalo **[1, 200]**.
-3. A pessoa deve ter **pelo menos um Email** associado.
+1. O nome deve ter ao menos 2 partes e ser composto apenas por letras.
+2. A idade deve estar no intervalo [1, 200].
+3. A pessoa deve ter pelo menos um Email associado.
 4. O `Email` deve estar no formato `_____@____._____`, com ao menos um caractere
    em cada parte.
 
@@ -213,7 +210,7 @@ uma lista vazia quando o objeto é válido. `save()` lança exceção se houver 
 
 ## Exercício 3 — Calculadora de salário
 
-> Um funcionário contém **nome, e-mail, salário-base e cargo**. O desconto aplicado
+> Um funcionário contém nome, e-mail, salário-base e cargo. O desconto aplicado
 > ao salário líquido depende do cargo.
 
 ### Modelo
